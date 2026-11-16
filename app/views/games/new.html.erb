@@ -11,7 +11,7 @@
 <div class="letters-container">
 <form action="/score" data-turbo="false" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= hidden_field_tag :letters, @letters.join %>
+  <%= hidden_field_tag :letters, @letters.join(",") %>
 
   <label for="letters">What is the longest word you can find?</label><br><br>
   <input type="text" id="word" name="word" autofocus>
