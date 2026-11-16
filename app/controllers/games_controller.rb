@@ -10,12 +10,9 @@ class GamesController < ApplicationController
     letters = params[:letters]
     word = params[:word]
 
-
     @msg ="-1"
     @word = word
     @letters = letters
-
-     @score = included?(word, letters)
 
     if included?(word, letters)
       if english_word?(word)
@@ -37,5 +34,5 @@ class GamesController < ApplicationController
       grid.upcase.include?(letter)
     end
   end
-
+@ll0!234H2026
 end
