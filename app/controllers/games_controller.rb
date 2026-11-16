@@ -4,7 +4,8 @@ class GamesController < ApplicationController
   end
 
   def score
-    @my_input = params[:my_input]
+    @letters = params[:letters]
+    @word = params[:word]
 
     @result = 0
   end
