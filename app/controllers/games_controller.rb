@@ -17,7 +17,6 @@ class GamesController < ApplicationController
 
     if included?(word, letters)
       if english_word?(word)
-        #score = compute_score(attempt, time)
         @msg = "1"
       else
         @msg = "0"
