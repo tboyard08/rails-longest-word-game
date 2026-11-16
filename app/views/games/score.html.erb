@@ -1,9 +1,16 @@
 <h1> Result</h1>
 <span><b>Letters:</b> <%= @letters %></span><br><br>
 <span><b>Word:</b> <%= @word %></span><br><br>
+<span><b>Score:</b> <%= @score %></span><br><br>
 
- msg1 = "Sory but <%= @word.upcase %> can't be built ouit of <%= @letters %>"<br>
- msg2 = "Sory but <%= @word.upcase %> does not seems to be a valid English word..."<br>
- msg3 = "Congratutalions <%= @word.upcase %> is a valid English word!"
+ <% if @msg == "0" %>
+  "Sory but <%= @word.upcase %> does not seems to be a valid English word..."
+ <% elsif @msg == "1" %>
+    Congratulations <%= @word.upcase %> is a valid English word!
+ <% else %>
+  Sory but <%= @word.upcase %> can't be built out of <%= @letters %>
+ <% end %>
+
  <br> <br>
-<a href="/new">Play again </a>
+
+<%= link_to "Play again", new_path %>
