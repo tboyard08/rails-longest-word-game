@@ -7,13 +7,15 @@ class GamesController < ApplicationController
   end
 
   def score
-    letters = params[:letters].gsub(",", "")
+    letters = params[:letters]
     word = params[:word]
 
-    @score = 0
+
     @msg ="-1"
     @word = word
     @letters = letters
+
+     @score = included?(word, letters)
 
     if included?(word, letters)
       if english_word?(word)
@@ -30,12 +32,9 @@ class GamesController < ApplicationController
     return json['found']
   end
 
-  def included?(guess, grid)
-    grid_letters = grid.chars.tally
-    guess_letters = guess.chars.tally
-
-    guess_letters.all? do |letter, count|
-      count <= grid_letters.fetch(letter, 0)
+  def included?(word, grid)
+    word.upcase.chars.all? do |letter|
+      grid.upcase.include?(letter)
     end
   end
 
