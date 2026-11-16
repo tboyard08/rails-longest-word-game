@@ -34,5 +34,5 @@ class GamesController < ApplicationController
       grid.upcase.include?(letter)
     end
   end
-@ll0!234H2026
+
 end
