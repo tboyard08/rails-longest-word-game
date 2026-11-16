@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     @letters = params[:letters]
     @word = params[:word]
 
-    @result = 0
+    @score = 0
   end
 
 end
